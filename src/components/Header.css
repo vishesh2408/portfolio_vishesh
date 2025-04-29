@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #111827;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+  } */
+  .logo {
+    font-size: 1.9rem;
+    font-weight: bold;
+    font-family: 'Pacifico', cursive;  /* Stylish custom font */
+    color:  #7b3e8d;
+    text-shadow: 2px 2px 6px rgba(123, 62, 141, 0.8); /* Glow effect */
+    transition: transform 0.3s ease;
+  }
+  
+  .logo:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    color: darkmagenta;
+  }
+  .nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #bbb;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav a:hover {
+    color: #4ade80; /* green-400 */
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .nav {
+      margin-top: 0.5rem;
+    }
+  
+    .nav a {
+      display: block;
+      margin: 0.5rem 0;
+    }
+  }
+  
