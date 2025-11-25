@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1.25rem;
+    background-color: rgba(17,24,39,0.66);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 18px rgba(2,6,23,0.6);
+  }
+  
+  /* .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+  } */
+  .logo {
+    font-size: 1.9rem;
+    font-weight: bold;
+    font-family: 'Pacifico', cursive;  /* Stylish custom font */
+    color:  #7b3e8d;
+    text-shadow: 2px 2px 6px rgba(123, 62, 141, 0.8); /* Glow effect */
+    transition: transform 0.25s ease, color 0.2s ease;
+    letter-spacing: -0.02em;
+  }
+  
+  .logo:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    color: darkmagenta;
+  }
+  .nav a {
+    margin: 0 0.8rem;
+    text-decoration: none;
+    color: #cbd5e1;
+    font-weight: 600;
+    padding: 0.35rem 0.5rem;
+    border-radius: 6px;
+    transition: transform 0.18s ease, color 0.18s ease, background-color 0.18s ease;
+  }
+
+  .nav a:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+    background-color: rgba(255,255,255,0.03);
+  }
+
+  .nav a.active {
+    color: #fff;
+    background: linear-gradient(90deg,#7c3aed,#3b82f6);
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .nav {
+      margin-top: 0.5rem;
+    }
+  
+    .nav a {
+      display: block;
+      margin: 0.5rem 0;
+    }
+  }
+  
