@@ -49,6 +49,7 @@ import Achievement from './AchievementsSection';
 import Contact from './Contact';
 
 import './Home.css';
+import ExperienceSection from './ExperienceSection';
 
 const Home = () => {
   return (
@@ -64,6 +65,8 @@ const Home = () => {
       <Project />
       <CertificationsSection />
       <Achievement />
+     
+<ExperienceSection />
       <Contact />
     </div>
   );

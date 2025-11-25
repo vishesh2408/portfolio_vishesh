@@ -14,7 +14,7 @@ const styles = {
   },
   heroContainer: {
     maxWidth: '1280px',
-    margin: '0 auto',    /////
+    margin: '0 auto',    
     padding: '0 0.5rem',
     display: 'flex',
     flexDirection: 'row',
@@ -234,9 +234,9 @@ const Hero = () => {
             <span style={{
               textShadow: '0 0 40px rgba(56, 189, 248, 0.9), 0 0 5px rgba(56, 189, 248, 0.9)',
             }}>
-              Hello, I'm 
+               I'm 
             </span>
-            <span style={styles.heroName}> Vishesh</span>
+            <span style={styles.heroName}> Vishesh Yadav</span>
           </h1>
           <p style={styles.heroSubtext}>
             FullStack Web Developer
@@ -259,7 +259,7 @@ const Hero = () => {
 </a>
 
 <a
-  href="/cv.pdf"
+  href="https://drive.google.com/file/d/13cY90lhsjeud3pSpQf5Ld1jtlV2oKJTj/view?usp=sharing"
   download
   style={{
     ...styles.heroButton,
@@ -272,28 +272,7 @@ const Hero = () => {
   Resume
 </a>
 
-            {/* <a
-              href="about"
-              style={isHovered ? { ...styles.heroButton, ...styles.heroButtonHover } : styles.heroButton}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
-              Hire Me
-            </a>
            
-
-            <a
-  href="/cv.pdf" // File path relative to public folder
-  download // Triggers download
-  style={{
-    ...styles.heroButton,
-    color: '#ffffff',
-    backgroundColor: '#7b3e8d',
-    // border: '2px solid #7b3e8d'
-  }}
->
-  Resume
-</a> */}
 
           </div>
         </div>

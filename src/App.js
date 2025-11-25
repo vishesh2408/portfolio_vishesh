@@ -12,6 +12,7 @@ import Skill from './pages/Skill';
 import CertificationsSection from './pages/CertificationsSection';
 import Achievement from './pages/AchievementsSection';
 import About from './pages/About';
+import ExperienceSection from './pages/ExperienceSection';  
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/resume" element={<Resume />} />
           <Route path="/certifications" element={<CertificationsSection />} />
           <Route path="/achievements" element={<Achievement />} />
+          <Route path="/experience" element={<ExperienceSection />} />
         </Routes>
       </main>
       <Footer />

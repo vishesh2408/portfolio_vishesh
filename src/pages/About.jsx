@@ -190,7 +190,7 @@ const About = () => {
                         </div>
                     </div>
 
-                    {/* <div className="card">
+                     <div className="card">
                         <div className="card-header">
                             <h2 className="card-title">
                                 <Briefcase className="w-6 h-6 text-emerald-400" /> Experience
@@ -199,13 +199,13 @@ const About = () => {
                         <div className="card-content">
                             <div>
                                 <h3 className="text-lg font-semibold">Web Developer</h3>
-                                <p className="text-gray-400">Company Name - 2019-Present</p>
+                                <p className="text-gray-400">Developed Online Education Website</p>
                                 <p className="text-gray-400">
-                                    Developed and maintained web applications using React and Node.js. Collaborated with cross-functional teams to deliver high-quality products.
+                                    Developed and maintained web applications using React and Node.js.
                                 </p>
                             </div>
                         </div>
-                    </div> */}
+                    </div> 
                 </div>
 
                 <div className="mt-12 projects-section">

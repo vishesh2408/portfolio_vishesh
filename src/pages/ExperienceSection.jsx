@@ -1,31 +1,31 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Briefcase, ChevronDown, ChevronUp } from 'lucide-react';
-import './Experience.css';
+import './ExperienceSection.css'; // Assuming you have a CSS file for styles
 
 const experienceData = [
     {
-        title: 'Optmyzr - SDE Intern',
-        company: 'PPC Management Software Company',
-        date: 'Since March 2023',
+        title: 'XYZ - SDE Intern',
+        company: 'XYZ Management Software Company',
+        date: 'Since March 2025',
         roles: [
             'Integrated Google Ads and Bing Ads APIs.',
             'Developed and enhanced UI using React, PHP, CoffeeScript.',
         ],
-        techStack: ['Redux', 'C#', 'CodeIgniter', '.NET', 'React.js', 'PHP'],
-        image: 'https://via.placeholder.com/150?text=Optmyzr',
+        techStack: ['Redux', 'Larvel', '.NET', 'React.js', 'PHP'],
+        image: 'https://thumbs.dreamstime.com/b/internship-eyeball-blue-round-button-isolated-129481927.jpg',
     },
     {
-        title: 'Payben - Freelancer',
-        company: 'Payben Private Limited',
-        date: 'April 2022 - March 2023',
+        title: 'Upstock - Freelancer',
+        company: 'XYZ Private Limited',
+        date: 'April 2024 - March 2025',
         roles: [
             'Re-developed recharge & bill payment platform.',
             'Managed recharge services & rewards.',
             'Enabled agent-based mobile recharge services.',
         ],
-        techStack: ['Android', 'Web Platforms'],
-        image: 'https://via.placeholder.com/150?text=Payben',
+        techStack: ['React', 'Web Platforms'],
+        image: 'https://www.google.co.in/url?sa=i&url=https%3A%2F%2Ftimestatement.com%2Fblog%2Four-ultimate-guide-to-being-a-freelancer&psig=AOvVaw0FDuppwotLDI8vkTnXM2T9&ust=1746078333271000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJDEq-qG_4wDFQAAAAAdAAAAABAE',
     },
 ];
 
