@@ -1,0 +1,71 @@
+.footer {
+    background-color: rgba(17,24,39,0.6);
+    padding: 2rem 1rem;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.03);
+    backdrop-filter: blur(4px);
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Spacing between icons */
+    margin-bottom: 15px;
+  }
+  
+  .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #333; /* Default icon background color */
+    color: #fff; /* Default icon color */
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  
+  .social-icon:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(2,6,23,0.5);
+  }
+  
+  /* Specific color styles for each platform (optional) */
+  .github {
+    background-color: #171515;
+  }
+  
+  .leetcode {
+    background-color: #ffa116;
+    color: #000;
+  }
+  
+  .instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  }
+  
+  .whatsapp {
+    background-color: #25d366;
+  }
+  
+  .linkedin {
+    background-color: #0077b5;
+  }
+  
+  .copyright {
+    font-size: 0.9em;
+    color: #9aa6b2;
+    margin-top: 0.5rem;
+  }
+  
+  /* Responsive Design (adjust breakpoints as needed) */
+  @media (max-width: 600px) {
+    .social-links {
+      gap: 15px;
+    }
+    .social-icon {
+      width: 35px;
+      height: 35px;
+    }
+  }
