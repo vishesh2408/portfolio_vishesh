@@ -1,3 +1,64 @@
+/* Animated words card for Hero (uses Tailwind for layout, CSS for keyframes) */
+:root{
+  --hero-bg: #0b1220;
+}
+.hero-card{
+  --bg-color: var(--hero-bg);
+  background-color: var(--bg-color);
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  display: inline-block;
+}
+.hero-loader{
+  color: rgb(124,124,124);
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-weight: 600;
+  font-size: 18px;
+  box-sizing: content-box;
+  height: 40px;
+  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+}
+.hero-words{
+  overflow: hidden;
+  position: relative;
+  height: 40px;
+}
+.hero-words::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(var(--bg-color) 10%, transparent 30%, transparent 70%, var(--bg-color) 90%);
+  z-index: 20;
+  pointer-events: none;
+}
+.hero-word{
+  display: block;
+  height: 100%;
+  padding-left: 6px;
+  color: #956afa;
+  animation: hero-spin 4s infinite;
+}
+
+@keyframes hero-spin{
+  0%{ transform: translateY(0%); }
+  10%{ transform: translateY(-102%); }
+  25%{ transform: translateY(-100%); }
+  35%{ transform: translateY(-202%); }
+  50%{ transform: translateY(-200%); }
+  60%{ transform: translateY(-302%); }
+  75%{ transform: translateY(-300%); }
+  85%{ transform: translateY(-402%); }
+  100%{ transform: translateY(-400%); }
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce){
+  .hero-word{ animation: none; }
+}
 (** Hero section **) /* simple hero styles */
 .hero {
 	padding: 4rem 0;
