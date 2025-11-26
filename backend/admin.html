@@ -1,0 +1,59 @@
+﻿<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Admin - Portfolio Backend</title>
+</head>
+<body>
+  <h1>Admin Panel</h1>
+  <p>Provide your admin token in the field below (the token is stored in backend/.env as ADMIN_TOKEN).</p>
+
+  <h2>Upload Resume / Profile</h2>
+  <input id="token" placeholder="ADMIN TOKEN" style="width:300px" />
+  <form id="uploadForm">
+    <label>Resume (PDF/DOC):</label><input type="file" name="resume" id="resume" /><br/>
+    <label>Profile image:</label><input type="file" name="profile" id="profile" /><br/>
+    <button type="submit">Upload</button>
+  </form>
+  <pre id="uploadResult"></pre>
+
+  <h2>Update JSON data (save to backend/data)</h2>
+  <label>Filename (e.g. profile.json):</label><input id="filename" value="profile.json" style="width:300px" /><br/>
+  <textarea id="jsoncontent" rows="10" cols="80">{"name":"Your Name"}</textarea><br/>
+  <button id="saveData">Save data</button>
+  <pre id="saveResult"></pre>
+
+  <script>
+    document.getElementById('uploadForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const token = document.getElementById('token').value;
+      const form = new FormData();
+      const resume = document.getElementById('resume').files[0];
+      const profile = document.getElementById('profile').files[0];
+      if (resume) form.append('resume', resume);
+      if (profile) form.append('profile', profile);
+      const res = await fetch('/api/admin/upload', {
+        method: 'POST',
+        headers: { 'Authorization': 'Bearer ' + token },
+        body: form
+      });
+      const data = await res.json();
+      document.getElementById('uploadResult').textContent = JSON.stringify(data, null, 2);
+    });
+
+    document.getElementById('saveData').addEventListener('click', async () => {
+      const token = document.getElementById('token').value;
+      const filename = document.getElementById('filename').value;
+      let content;
+      try { content = JSON.parse(document.getElementById('jsoncontent').value); } catch (e) { alert('Invalid JSON'); return; }
+      const res = await fetch('/api/admin/update-data', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+        body: JSON.stringify({ filename, content })
+      });
+      const data = await res.json();
+      document.getElementById('saveResult').textContent = JSON.stringify(data, null, 2);
+    });
+  </script>
+</body>
+</html>
