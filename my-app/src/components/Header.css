@@ -70,4 +70,10 @@
       margin: 0.5rem 0;
     }
   }
+
+/* Mobile panel helper: hidden by default on larger screens, visible on small screens */
+.mobile-panel { display: none; }
+@media (max-width: 767px) {
+  .mobile-panel { display: block; }
+}
   

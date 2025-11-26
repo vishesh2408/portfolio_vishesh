@@ -43,19 +43,21 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile menu panel */}
-      <div className={`md:hidden ${open ? 'block' : 'hidden'} px-4 pb-4`}>
-        <nav className="stack">
-          <a className="block py-2 px-3 rounded-md hover:bg-white/5" href="/">Home</a>
-          <a className="block py-2 px-3 rounded-md hover:bg-white/5" href="/about">About</a>
-          <a className="block py-2 px-3 rounded-md hover:bg-white/5" href="/skills">Skills</a>
-          <a className="block py-2 px-3 rounded-md hover:bg-white/5" href="/achievements">Achievements</a>
-          <a className="block py-2 px-3 rounded-md hover:bg-white/5" href="/certifications">Certifications</a>
-          <a className="block py-2 px-3 rounded-md hover:bg-white/5" href="/projects">Projects</a>
-          <a className="block py-2 px-3 rounded-md hover:bg-white/5" href="/resume">Resume</a>
-          <a className="block py-2 px-3 rounded-md bg-gradient-to-r from-purple-600 to-blue-500 text-white text-center" href="/contact">Contact</a>
-        </nav>
-      </div>
+      {/* Mobile menu panel - render only when open to avoid duplicate menus on desktop */}
+      {open && (
+        <div className="mobile-panel px-4 pb-4">
+          <nav className="stack">
+            <a className="block py-2 px-3 rounded-md hover:bg-white/5" href="/">Home</a>
+            <a className="block py-2 px-3 rounded-md hover:bg-white/5" href="/about">About</a>
+            <a className="block py-2 px-3 rounded-md hover:bg-white/5" href="/skills">Skills</a>
+            <a className="block py-2 px-3 rounded-md hover:bg-white/5" href="/achievements">Achievements</a>
+            <a className="block py-2 px-3 rounded-md hover:bg-white/5" href="/certifications">Certifications</a>
+            <a className="block py-2 px-3 rounded-md hover:bg-white/5" href="/projects">Projects</a>
+            <a className="block py-2 px-3 rounded-md hover:bg-white/5" href="/resume">Resume</a>
+            <a className="block py-2 px-3 rounded-md bg-gradient-to-r from-purple-600 to-blue-500 text-white text-center" href="/contact">Contact</a>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };
