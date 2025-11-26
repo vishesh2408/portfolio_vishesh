@@ -58,6 +58,24 @@ async function ensureDirs() {
   }
 }
 
+// Helper to safely read JSON files (strip BOM, handle parse errors)
+async function readJsonFile(filePath, fallback = {}) {
+  try {
+    const raw = await fs.readFile(filePath, 'utf8');
+    if (!raw || !raw.toString().trim()) return fallback;
+    const clean = raw.replace(/^\uFEFF/, '').trim();
+    try {
+      return JSON.parse(clean);
+    } catch (err) {
+      console.error(`Invalid JSON in ${filePath}:`, err.message);
+      return fallback;
+    }
+  } catch (err) {
+    console.error(`Failed to read ${filePath}:`, err.message);
+    return fallback;
+  }
+}
+
 function checkAdmin(req, res, next) {
   const auth = req.headers.authorization || req.query.token || req.headers['x-admin-token'];
   const token = auth && auth.startsWith('Bearer ') ? auth.slice(7) : auth;
@@ -119,8 +137,7 @@ app.post('/api/admin/upload', checkAdmin, upload.fields([{ name: 'resume', maxCo
   // update profile.json with paths if present
   try {
     const profilePath = path.join(dataDir, 'profile.json');
-    const raw = await fs.readFile(profilePath, 'utf8');
-    const profile = JSON.parse(raw || '{}');
+    const profile = await readJsonFile(profilePath, {});
     if (result.resume) profile.resume = result.resume;
     if (result.profile) profile.profileImage = result.profile;
     await fs.writeFile(profilePath, JSON.stringify(profile, null, 2));
@@ -189,7 +206,7 @@ ensureDirs().then(async () => {
     if (ProfileModel) {
       const existing = await ProfileModel.findOne();
       if (!existing) {
-        const p = JSON.parse(await fs.readFile(path.join(dataDir, 'profile.json'), 'utf8'));
+        const p = await readJsonFile(path.join(dataDir, 'profile.json'), {});
         await ProfileModel.create(Object.assign({}, p));
         console.log('Seeded profile into MongoDB');
       }
