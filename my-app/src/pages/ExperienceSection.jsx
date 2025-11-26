@@ -119,23 +119,25 @@ const ExperienceSection = () => {
     };
 
     return (
-        <div className="exp-section">
-            <h2 className="exp-heading">
-                <Briefcase className="exp-icon" />
-                Experience
-            </h2>
-            <p className="exp-summary">Here's a summary of my professional experience.</p>
-            <motion.div
-                className="exp-list"
-                variants={containerVariants}
-                initial="hidden"
-                animate="visible"
-            >
-                {experienceData.map((experience, index) => (
-                    <ExperienceCard key={index} experience={experience} />
-                ))}
-            </motion.div>
-        </div>
+        <section className="section exp-section">
+            <div className="container">
+                <h2 className="exp-heading">
+                    <Briefcase className="exp-icon" />
+                    Experience
+                </h2>
+                <p className="exp-summary">Here's a summary of my professional experience.</p>
+                <motion.div
+                    className="exp-list"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    {experienceData.map((experience, index) => (
+                        <ExperienceCard key={index} experience={experience} />
+                    ))}
+                </motion.div>
+            </div>
+        </section>
     );
 };
 
