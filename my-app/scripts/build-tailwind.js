@@ -15,7 +15,7 @@ if (!fs.existsSync(inFile)) {
 
 const input = fs.readFileSync(inFile, 'utf8');
 
-postcss([tailwind(path.join(root, 'tailwind.config.cjs')), autoprefixer])
+postcss([tailwind(path.join(root, 'tailwind.config.js')), autoprefixer])
   .process(input, { from: inFile, to: outFile })
   .then(result => {
     fs.writeFileSync(outFile, result.css, 'utf8');
