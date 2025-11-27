@@ -1,5 +1,5 @@
 import React, { useEffect, useRef} from 'react';
-import visheshimage from '../assets/visheshimage.png';
+import visheshimage from '../assets/visheshimage.jpg';
 
 import {
     Github,
@@ -248,7 +248,7 @@ const About = () => {
                     </div>
                 </div>
             </div>
-            <style jsx global>{`
+            <style>{`
                 .about-container {
                     min-height: 100vh;
                     background-color:  #111827;
@@ -257,7 +257,7 @@ const About = () => {
                     overflow: hidden;
                 }
 
-                .container {
+                .about-container .container {
                     margin: auto;
                     padding: 3rem 1rem;
                     position: relative;
@@ -269,8 +269,9 @@ const About = () => {
                     font-size: 2.5rem;
                     font-weight: bold;
                     margin-bottom: 1rem;
-                    margin-left: 35rem;
+                    margin-left: 0;
                     color:  #7b3e8d;
+                    text-align: center;
                 }
 
                 .about-description {

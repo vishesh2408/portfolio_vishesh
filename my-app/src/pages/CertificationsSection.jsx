@@ -1,15 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { GraduationCap } from 'lucide-react';
+import placeholderImg from '../assets/profile.png';
 
 // CSS is defined as a string here.
 const styles = `
 .cert-section {
   margin-top: 0rem;
-  padding: 1rem;
-  background-color: #111827; /* Black Dark Blue */
-  margin-left: 9rem;
-  margin-right: 9rem;
+  padding: 2rem 0; /* slightly more vertical breathing room */
+  background-color: #0f172a; /* section background aligns with Achievements */
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .cert-heading {
@@ -21,7 +22,9 @@ const styles = `
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-left: 17rem;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 2rem;
 }
 
 .cert-icon {
@@ -38,37 +41,25 @@ const styles = `
 
 .cert-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .cert-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .cert-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  justify-items: stretch;
 }
 
 .cert-card {
-  background-color: rgba(31, 41, 55, 0.5);
-  border-radius: 0.75rem;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 0.5rem;
   padding: 1rem;
-  border: 1px solid rgba(55, 65, 81, 0.5);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
 }
 
 .cert-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 6px 24px rgba(147, 51, 234, 0.2);
-  border-color: rgba(147, 51, 234, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(147, 51, 234, 0.12);
+  border-color: rgba(163,100,176,0.9);
 }
 
 .cert-header {
@@ -105,15 +96,15 @@ const styles = `
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), transparent);
-  border-radius: 0.75rem;
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.06), transparent);
+  border-radius: 0.5rem;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.5s ease;
 }
 
 .cert-card:hover .cert-glow {
-  opacity: 0.5;
+  opacity: 0.45;
 }
 
 .certificate-link {
@@ -137,28 +128,28 @@ const CertificationsSection = () => {
       title: 'Server-side JavaScript with Node.js',
       by: 'Coursera',
       details: 'Learn to build server-side applications with Node.js.',
-      image: 'https://cdn-images-1.medium.com/max/1600/1*4VBxaeHaxTxjZiPbI7g3kw.jpeg',
+      image: placeholderImg,
       certificateUrl: 'https://coursera.org/verify/8WCW6WUCAHH3 ',
     },
     {
       title: 'Building Web Applications in PHP',
       by: 'Unknown', // You might want to add this if you know
       details: 'Learn to build web applications with PHP.',
-      image: 'https://static-00.iconduck.com/assets.00/php-icon-2048x2048-zjxns1zh.png',
+      image: placeholderImg,
       certificateUrl: 'https://coursera.org/verify/9YWMTYYRNFIJ',
     },
     {
       title: 'Data Structure Algorithms - Self Paced',
       by: 'Unknown',  // You might want to add this if you know
       details: 'Self-paced course on Data Structures and Algorithms.',
-      image: 'https://d20ohkaloyme4g.cloudfront.net/img/document_thumbnails/5ee726e83f98c27d0aac940dab49e944/thumb_1200_1553.png',
+      image: placeholderImg,
       certificateUrl: 'https://www.geeksforgeeks.org/certificate/6495655875bce823f50d843d22093dd2?utm_source=socials&utm_medium=cc_link',
     },
      {
       title: 'Ethical Hacking',
       by: 'NPTL',
       details: 'Course on Ethical Hacking.',
-      image: 'https://wallpapercave.com/wp/wp9233575.jpg',
+      image: placeholderImg,
       certificateUrl: 'https://drive.google.com/file/d/1p8_7Wqm-h85e53ph0utjmrVy6L1zASBc/view?usp=sharing',
     },
   ];
@@ -181,7 +172,19 @@ const CertificationsSection = () => {
         layout
       >
         <div className="cert-header">
-          <img src={certification.image} alt={certification.title} className="cert-image" />
+          <img
+            src={certification.image}
+            alt={certification.title}
+            className="cert-image"
+            loading="lazy"
+            style={{ width: '64px', height: '64px', objectFit: 'cover' }}
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = placeholderImg;
+              e.currentTarget.style.width = '64px';
+              e.currentTarget.style.height = '64px';
+            }}
+          />
           <div>
             <h4 className="cert-title">{certification.title}</h4>
             <p className="cert-by">{certification.by}</p>
@@ -206,20 +209,22 @@ const CertificationsSection = () => {
   };
 
   return (
-    <div className="cert-section">
-      <h2 className="cert-heading">
-        <GraduationCap className="cert-icon" />
-        Certifications & Courses
-      </h2>
-      {/* <p className="cert-description">
-        Here are some of the certifications and courses I've completed.
-      </p> */}
-      <div className="cert-grid">
-        {certificationsData.map((certification, index) => (
-          <CertificationCard key={index} certification={certification} />
-        ))}
+    <section className="section cert-section">
+      <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', paddingLeft: '16px', paddingRight: '16px' }}>
+        <h2 className="cert-heading">
+          <GraduationCap className="cert-icon" />
+          Certifications & Courses
+        </h2>
+        {/* <p className="cert-description">
+          Here are some of the certifications and courses I've completed.
+        </p> */}
+        <div className="cert-grid">
+          {certificationsData.map((certification, index) => (
+            <CertificationCard key={index} certification={certification} />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

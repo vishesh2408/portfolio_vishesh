@@ -21,8 +21,8 @@ const Skill = () => {
                 color: 'transparent',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '10px',
-               marginLeft: '30rem',
+                justifyContent: 'center',
+                gap: '10px'
             }}>
                 <BrainCircuit style={{ width: '24px', height: '24px', color: ' #7b3e8d' }} />
                 My Skills & Expertise
@@ -44,13 +44,15 @@ const Skill = () => {
                         paddingBottom: '10px'
                     }}>Programming Languages</h3>
                     <div style={{
-                        background: 'linear-gradient(135deg, rgba(28, 32, 42, 1) 0%, rgba(50, 56, 73, 1) 100%)',
-                        borderRadius: '12px',
+                        backgroundColor: '#1e293b',
+                        border: '1px solid #334155',
+                        borderRadius: '0.5rem',
                         padding: '20px',
                         margin: '10px 0',
-                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                         position: 'relative',
-                        transition: 'transform 0.3s ease, boxShadow 0.3s ease'
+                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+                        cursor: 'pointer'
                     }}>
                         <span style={{ width: '24px', height: '24px', marginRight: '10px', color: '#b9b9b9' }}><Code style={{ width: '24px', height: '24px', color: '#b9b9b9' }} /></span>
                         <span style={{ fontSize: '18px', fontWeight: 'bold', color: '#d1d5db' }}>Java</span>
@@ -81,13 +83,15 @@ const Skill = () => {
                         </div>
                     </div>
                     <div style={{
-                        background: 'linear-gradient(135deg, rgba(28, 32, 42, 1) 0%, rgba(50, 56, 73, 1) 100%)',
-                        borderRadius: '12px',
+                        backgroundColor: '#1e293b',
+                        border: '1px solid #334155',
+                        borderRadius: '0.5rem',
                         padding: '20px',
                         margin: '10px 0',
-                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                         position: 'relative',
-                        transition: 'transform 0.3s ease, boxShadow 0.3s ease'
+                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+                        cursor: 'pointer'
                     }}>
                         <span style={{ width: '24px', height: '24px', marginRight: '10px', color: '#b9b9b9' }}><Code2 style={{ width: '24px', height: '24px', color: '#b9b9b9' }} /></span>
                         <span style={{ fontSize: '18px', fontWeight: 'bold', color: '#d1d5db' }}>C++</span>
@@ -118,13 +122,15 @@ const Skill = () => {
                         </div>
                     </div>
                     <div style={{
-                        background: 'linear-gradient(135deg, rgba(28, 32, 42, 1) 0%, rgba(50, 56, 73, 1) 100%)',
-                        borderRadius: '12px',
+                        backgroundColor: '#1e293b',
+                        border: '1px solid #334155',
+                        borderRadius: '0.5rem',
                         padding: '20px',
                         margin: '10px 0',
-                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                         position: 'relative',
-                        transition: 'transform 0.3s ease, boxShadow 0.3s ease'
+                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+                        cursor: 'pointer'
                     }}>
                         <span style={{ width: '24px', height: '24px', marginRight: '10px', color: '#b9b9b9' }}><Code style={{ width: '24px', height: '24px', color: '#b9b9b9' }} /></span>
                         <span style={{ fontSize: '18px', fontWeight: 'bold', color: '#d1d5db' }}>JavaScript</span>
@@ -168,13 +174,15 @@ const Skill = () => {
                         paddingBottom: '10px'
                     }}>Frontend Development</h3>
                     <div style={{
-                        background: 'linear-gradient(135deg, rgba(28, 32, 42, 1) 0%, rgba(50, 56, 73, 1) 100%)',
-                        borderRadius: '12px',
+                        backgroundColor: '#1e293b',
+                        border: '1px solid #334155',
+                        borderRadius: '0.5rem',
                         padding: '20px',
                         margin: '10px 0',
-                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                         position: 'relative',
-                        transition: 'transform 0.3s ease, boxShadow 0.3s ease'
+                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+                        cursor: 'pointer'
                     }}>
                         <span style={{ width: '24px', height: '24px', marginRight: '10px', color: '#b9b9b9' }}><Code style={{ width: '24px', height: '24px', color: '#b9b9b9' }} /></span>
                         <span style={{ fontSize: '18px', fontWeight: 'bold', color: '#d1d5db' }}>HTML5</span>
@@ -205,13 +213,15 @@ const Skill = () => {
                         </div>
                     </div>
                     <div style={{
-                        background: 'linear-gradient(135deg, rgba(28, 32, 42, 1) 0%, rgba(50, 56, 73, 1) 100%)',
-                        borderRadius: '12px',
+                        backgroundColor: '#1e293b',
+                        border: '1px solid #334155',
+                        borderRadius: '0.5rem',
                         padding: '20px',
                         margin: '10px 0',
-                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                         position: 'relative',
-                        transition: 'transform 0.3s ease, boxShadow 0.3s ease'
+                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+                        cursor: 'pointer'
                     }}>
                         <span style={{ width: '24px', height: '24px', marginRight: '10px', color: '#b9b9b9' }}><Code style={{ width: '24px', height: '24px', color: '#b9b9b9' }} /></span>
                         <span style={{ fontSize: '18px', fontWeight: 'bold', color: '#d1d5db' }}>CSS3</span>
@@ -242,13 +252,15 @@ const Skill = () => {
                         </div>
                     </div>
                     <div style={{
-                        background: 'linear-gradient(135deg, rgba(28, 32, 42, 1) 0%, rgba(50, 56, 73, 1) 100%)',
-                        borderRadius: '12px',
+                        backgroundColor: '#1e293b',
+                        border: '1px solid #334155',
+                        borderRadius: '0.5rem',
                         padding: '20px',
                         margin: '10px 0',
-                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                         position: 'relative',
-                        transition: 'transform 0.3s ease, boxShadow 0.3s ease'
+                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+                        cursor: 'pointer'
                     }}>
                         <span style={{ width: '24px', height: '24px', marginRight: '10px', color: '#b9b9b9' }}><Code style={{ width: '24px', height: '24px', color: '#b9b9b9' }} /></span>
                         <span style={{ fontSize: '18px', fontWeight: 'bold', color: '#d1d5db' }}>Next.js</span>
@@ -279,13 +291,15 @@ const Skill = () => {
                         </div>
                     </div>
                     <div style={{
-                        background: 'linear-gradient(135deg, rgba(28, 32, 42, 1) 0%, rgba(50, 56, 73, 1) 100%)',
-                        borderRadius: '12px',
+                        backgroundColor: '#1e293b',
+                        border: '1px solid #334155',
+                        borderRadius: '0.5rem',
                         padding: '20px',
                         margin: '10px 0',
-                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                         position: 'relative',
-                        transition: 'transform 0.3s ease, boxShadow 0.3s ease'
+                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+                        cursor: 'pointer'
                     }}>
                         <span style={{ width: '24px', height: '24px', marginRight: '10px', color: '#b9b9b9' }}><Code style={{ width: '24px', height: '24px', color: '#b9b9b9' }} /></span>
                         <span style={{ fontSize: '18px', fontWeight: 'bold', color: '#d1d5db' }}>React</span>
@@ -329,13 +343,15 @@ const Skill = () => {
                         paddingBottom: '10px'
                     }}>Backend Development</h3>
                     <div style={{
-                        background: 'linear-gradient(135deg, rgba(28, 32, 42, 1) 0%, rgba(50, 56, 73, 1) 100%)',
-                        borderRadius: '12px',
+                        backgroundColor: '#1e293b',
+                        border: '1px solid #334155',
+                        borderRadius: '0.5rem',
                         padding: '20px',
                         margin: '10px 0',
-                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                         position: 'relative',
-                        transition: 'transform 0.3s ease, boxShadow 0.3s ease'
+                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+                        cursor: 'pointer'
                     }}>
                         <span style={{ width: '24px', height: '24px', marginRight: '10px', color: '#b9b9b9' }}><Code style={{ width: '24px', height: '24px', color: '#b9b9b9' }} /></span>
                         <span style={{ fontSize: '18px', fontWeight: 'bold', color: '#d1d5db' }}>Node.js</span>
@@ -366,13 +382,15 @@ const Skill = () => {
                         </div>
                     </div>
                     <div style={{
-                        background: 'linear-gradient(135deg, rgba(28, 32, 42, 1) 0%, rgba(50, 56, 73, 1) 100%)',
-                        borderRadius: '12px',
+                        backgroundColor: '#1e293b',
+                        border: '1px solid #334155',
+                        borderRadius: '0.5rem',
                         padding: '20px',
                         margin: '10px 0',
-                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                         position: 'relative',
-                        transition: 'transform 0.3s ease, boxShadow 0.3s ease'
+                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+                        cursor: 'pointer'
                     }}>
                         <span style={{ width: '24px', height: '24px', marginRight: '10px', color: '#b9b9b9' }}><Code style={{ width: '24px', height: '24px', color: '#b9b9b9' }} /></span>
                         <span style={{ fontSize: '18px', fontWeight: 'bold', color: '#d1d5db' }}>Express.js</span>
@@ -416,13 +434,15 @@ const Skill = () => {
                         paddingBottom: '10px'
                     }}>Databases</h3>
                     <div style={{
-                        background: 'linear-gradient(135deg, rgba(28, 32, 42, 1) 0%, rgba(50, 56, 73, 1) 100%)',
-                        borderRadius: '12px',
+                        backgroundColor: '#1e293b',
+                        border: '1px solid #334155',
+                        borderRadius: '0.5rem',
                         padding: '20px',
                         margin: '10px 0',
-                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                         position: 'relative',
-                        transition: 'transform 0.3s ease, boxShadow 0.3s ease'
+                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+                        cursor: 'pointer'
                     }}>
                         <span style={{ width: '24px', height: '24px', marginRight: '10px', color: '#b9b9b9' }}><Database style={{ width: '24px', height: '24px', color: '#b9b9b9' }} /></span>
                         <span style={{ fontSize: '18px', fontWeight: 'bold', color: '#d1d5db' }}>MySQL</span>
@@ -453,13 +473,15 @@ const Skill = () => {
                         </div>
                     </div>
                     <div style={{
-                        background: 'linear-gradient(135deg, rgba(28, 32, 42, 1) 0%, rgba(50, 56, 73, 1) 100%)',
-                        borderRadius: '12px',
+                        backgroundColor: '#1e293b',
+                        border: '1px solid #334155',
+                        borderRadius: '0.5rem',
                         padding: '20px',
                         margin: '10px 0',
-                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                         position: 'relative',
-                        transition: 'transform 0.3s ease, boxShadow 0.3s ease'
+                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+                        cursor: 'pointer'
                     }}>
                         <span style={{ width: '24px', height: '24px', marginRight: '10px', color: '#b9b9b9' }}><Database style={{ width: '24px', height: '24px', color: '#b9b9b9' }} /></span>
                         <span style={{ fontSize: '18px', fontWeight: 'bold', color: '#d1d5db' }}>MongoDB</span>

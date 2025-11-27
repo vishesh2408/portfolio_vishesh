@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "backend",
   "version": "0.1.0",
   "description": "Minimal Express backend for portfolio monorepo",
@@ -10,9 +10,11 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2",
-    "multer": "^1.4.5-lts.1",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
-    "mongoose": "^7.5.0"
+    "express": "^4.18.2",
+    "helmet": "^7.2.0",
+    "mongoose": "^7.5.0",
+    "multer": "^1.4.5-lts.1"
   }
 }

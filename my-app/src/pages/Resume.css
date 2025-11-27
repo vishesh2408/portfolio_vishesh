@@ -2,18 +2,21 @@
     padding: 4rem 2rem;
     text-align: center;
     background-color: #111827;
+    padding : 6rem 2rem;
   }
   
   .resume-title {
     font-size: 2.5rem;
     color: #7b3e8d;
     margin-bottom: 0.5rem;
+    padding: 2rem 0;
   }
   
   .resume-description {
     color: #555;
     font-size: 1.1rem;
     margin-bottom: 2rem;
+    padding: 2rem 1rem;
   }
   
   .resume-button-wrapper {

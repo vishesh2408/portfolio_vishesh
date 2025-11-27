@@ -5,7 +5,7 @@ const projects = [
     {
         title: 'Project 1: Online Education Website',
         description: 'Developed a full-stack educational platform with user authentication, educational content, quizzes, and feedback functionality.',
-        imageUrl: 'https://i.pinimg.com/originals/53/38/55/5338554a68f881a09791879d474b035a.jpg',
+        imageUrl: 'https://static.vecteezy.com/system/resources/previews/001/991/578/large_2x/modern-flat-design-illustration-learning-and-education-landing-page-and-web-banner-template-knowledge-and-successful-education-learning-graduation-open-book-with-trophy-and-graduation-cap-free-vector.jpg',
         technologies: ['React', 'Node.js', 'MongoDB'],
         link: 'https://react-project1-4sdk-amb0j3rc4-vishesh2408s-projects.vercel.app',
         logo: (
@@ -30,7 +30,7 @@ const projects = [
     {
         title: 'Project 2: Examination System',
         description: 'Created a web application for conducting online examinations with real-time results and analytics.',
-        imageUrl: 'https://th.bing.com/th/id/OIP.H7MPFjGdaG0Xx9JNn5vvXAHaEA?cb=iwc1&rs=1&pid=ImgDetMain',
+        imageUrl: 'https://ipsitasoft.com/backend/img/portfolio/1694595124-ipsita.png',
         technologies: ['PHP', 'HTML', 'CSS', 'phpMyAdmin'],
         link: '#',
         logo: (

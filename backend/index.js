@@ -4,12 +4,21 @@ const fs = require('fs').promises;
 const multer = require('multer');
 require('dotenv').config();
 const mongoose = require('mongoose');
+const helmet = require('helmet');
+const cors = require('cors');
 
 const app = express();
 const port = process.env.PORT || 3001;
 const ADMIN_TOKEN = process.env.ADMIN_TOKEN || 'changeme';
 
 app.use(express.json());
+
+// Security headers
+app.use(helmet());
+
+// CORS — allow frontend origin set via FRONTEND_URL env, fallback to Vite dev server origin
+const frontendOrigin = process.env.FRONTEND_URL || process.env.VITE_FRONTEND_URL || 'http://localhost:5173';
+app.use(cors({ origin: frontendOrigin }));
 
 const uploadsDir = path.join(__dirname, 'uploads');
 const dataDir = path.join(__dirname, 'data');

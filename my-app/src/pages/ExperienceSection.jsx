@@ -1,32 +1,34 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import {motion, AnimatePresence } from 'framer-motion';
 import { Briefcase, ChevronDown, ChevronUp } from 'lucide-react';
 import './ExperienceSection.css'; // Assuming you have a CSS file for styles
 
 const experienceData = [
     {
-        title: 'XYZ - SDE Intern',
-        company: 'XYZ Management Software Company',
-        date: 'Since March 2025',
+        title: 'Fresher',
+        company: 'Looking for Opportunities',
+        date: 'Since March 2024',
         roles: [
-            'Integrated Google Ads and Bing Ads APIs.',
-            'Developed and enhanced UI using React, PHP, CoffeeScript.',
+            'Currently seeking opportunities to apply my skills and grow professionally.',
+            // 'Integrated Google Ads and Bing Ads APIs.',
+            // 'Developed and enhanced UI using React, PHP, CoffeeScript.',
         ],
-        techStack: ['Redux', 'Larvel', '.NET', 'React.js', 'PHP'],
-        image: 'https://thumbs.dreamstime.com/b/internship-eyeball-blue-round-button-isolated-129481927.jpg',
-    },
-    {
-        title: 'Upstock - Freelancer',
-        company: 'XYZ Private Limited',
-        date: 'April 2024 - March 2025',
-        roles: [
-            'Re-developed recharge & bill payment platform.',
-            'Managed recharge services & rewards.',
-            'Enabled agent-based mobile recharge services.',
-        ],
-        techStack: ['React', 'Web Platforms'],
-        image: 'https://www.google.co.in/url?sa=i&url=https%3A%2F%2Ftimestatement.com%2Fblog%2Four-ultimate-guide-to-being-a-freelancer&psig=AOvVaw0FDuppwotLDI8vkTnXM2T9&ust=1746078333271000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJDEq-qG_4wDFQAAAAAdAAAAABAE',
-    },
+        techStack: ['React.js','Redux','PHP', 'Larvel', '.NET', 'React Native', 'Django', ],
+        image: 'https://tse1.mm.bing.net/th/id/OIP.o_3XiIBRjuZvYDfX5asQMwHaEo?rs=1&pid=ImgDetMain&o=7&rm=3',
+     }
+    
+    //, {
+    //     title: 'Upstock - Freelancer',
+    //     company: 'XYZ Private Limited',
+    //     date: 'April 2024 - March 2025',
+    //     roles: [
+    //         'Re-developed recharge & bill payment platform.',
+    //         'Managed recharge services & rewards.',
+    //         'Enabled agent-based mobile recharge services.',
+    //     ],
+    //     techStack: ['React', 'Web Platforms'],
+    //     image: 'https://www.google.co.in/url?sa=i&url=https%3A%2F%2Ftimestatement.com%2Fblog%2Four-ultimate-guide-to-being-a-freelancer&psig=AOvVaw0FDuppwotLDI8vkTnXM2T9&ust=1746078333271000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJDEq-qG_4wDFQAAAAAdAAAAABAE',
+    // },
 ];
 
 const techStackColors = {
@@ -34,10 +36,13 @@ const techStackColors = {
     'C#': 'blue',
     'CodeIgniter': 'red',
     '.NET': 'indigo',
-    'React.js': 'cyan',
+    'React.js': 'teal',
     'PHP': 'violet',
     'Android': 'green',
     'Web Platforms': 'goldenrod',
+    'React Native': 'cyan',
+    'Django': 'darkgreen',
+
 };
 
 const ExperienceCard = ({ experience }) => {

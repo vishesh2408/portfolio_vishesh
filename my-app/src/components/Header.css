@@ -55,25 +55,16 @@
     background: linear-gradient(90deg,#7c3aed,#3b82f6);
   }
   
-  @media (max-width: 768px) {
-    .header {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .nav {
-      margin-top: 0.5rem;
-    }
-  
-    .nav a {
-      display: block;
-      margin: 0.5rem 0;
-    }
-  }
+  /* Desktop nav visible on wide screens */
+  .desktop-nav { display: flex; align-items: center; gap: 1rem; }
 
-/* Mobile panel helper: hidden by default on larger screens, visible on small screens */
-.mobile-panel { display: none; }
-@media (max-width: 767px) {
-  .mobile-panel { display: block; }
-}
+  /* Mobile toggle visible on small screens */
+  .mobile-toggle { display: none; }
+
+  @media (max-width: 767px) {
+    .header { flex-direction: row; }
+    .desktop-nav { display: none; }
+    .mobile-toggle { display: block; }
+    .nav a { display: block; margin: 0.5rem 0; }
+  }
   

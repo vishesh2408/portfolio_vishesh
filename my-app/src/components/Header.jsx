@@ -8,11 +8,11 @@ const Header = () => {
     <header className="header">
       <div className="container flex items-center justify-between">
         <div className="logo flex items-center gap-3">
-          <div className="text-2xl font-bold text-purple-600">Vishesh</div>
+          <div className="text-2xl font-bold text-teal-600">Vishesh</div>
         </div>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-4 nav">
+        <nav className="desktop-nav nav">
           <a className="px-3 py-1 rounded-md hover:bg-white/5 transition" href="/">Home</a>
           <a className="px-3 py-1 rounded-md hover:bg-white/5 transition" href="/about">About</a>
           <a className="px-3 py-1 rounded-md hover:bg-white/5 transition" href="/skills">Skills</a>
@@ -24,7 +24,7 @@ const Header = () => {
         </nav>
 
         {/* Mobile hamburger */}
-        <div className="md:hidden">
+        <div className="mobile-toggle">
           <button
             aria-label="Toggle menu"
             className="p-2 rounded-md text-gray-200 hover:bg-white/5"
