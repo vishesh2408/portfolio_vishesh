@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import visheshimage from '../assets/visheshimage.png'; // adjust path as needed
+import React, { useEffect, useState, useMemo, useCallback } from 'react';
+import visheshimage from '../assets/visheshimage.jpg'; // adjust path as needed
 import './Hero.css';
 
 // Tailwind utilities will be used for responsive layout below.
@@ -9,7 +9,8 @@ const Hero = () => {
 
   useEffect(() => {
     let mounted = true;
-    fetch('/api/data/profile.json')
+    const base = import.meta.env.VITE_BACKEND_URL ?? '';
+    fetch(`${base}/api/data/profile.json`)
       .then((r) => r.json())
       .then((data) => {
         if (mounted) setProfile(data);
@@ -20,41 +21,88 @@ const Hero = () => {
     return () => { mounted = false };
   }, []);
 
-  const name = profile?.name || 'Vishesh Yadav';
-  const title = profile?.title || 'FullStack Web Developer';
-  const resumeUrl = profile?.resume || 'https://drive.google.com/file/d/13cY90lhsjeud3pSpQf5Ld1jtlV2oKJTj/view?usp=sharing';
-  const profileImage = profile?.profileImage ? profile.profileImage : visheshimage;
+  // ensure the last name isn't split/hidden by CSS/layout: join final word with a non-breaking space
+  const rawName = profile?.name ?? 'Vishesh Yadav';
+  const name = rawName.replace(/\s+(\S+)$/, '\u00A0$1');
+  // Rotating titles: memoized list and optimized updater
+  const titles = useMemo(() => [
+    'FullStack Developer',
+    'Frontend Developer',
+    'Backend Developer'
+  ], []);
+
+  const titleFromProfile = profile?.title;
+  const [titleIndex, setTitleIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(() => {
+    try {
+      return typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    } catch {
+      return false;
+    }
+  });
+  const title = titleFromProfile || titles[titleIndex];
+
+  const advanceTitle = useCallback(() => {
+    setTitleIndex((i) => (i + 1) % titles.length);
+  }, [titles.length]);
+  const resumeUrl = profile?.resume || 'https://drive.google.com/file/d/1e7luQyTfALtp2tLAbBOhtB76st2GXAhU/view?usp=sharing';
+  // If backend provides a path like "/uploads/..." and a backend URL is set, prefix it
+  const base = import.meta.env.VITE_BACKEND_URL ?? '';
+  const profileImage = profile?.profileImage
+    ? (profile.profileImage.startsWith('/') && base ? `${base}${profile.profileImage}` : profile.profileImage)
+    : visheshimage;
+
+  useEffect(() => {
+    // listen for changes to prefers-reduced-motion and update state
+    if (typeof window !== 'undefined' && window.matchMedia) {
+      const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const handler = (e) => setPrefersReducedMotion(e.matches);
+      if (mq.addEventListener) mq.addEventListener('change', handler);
+      else if (mq.addListener) mq.addListener(handler);
+      return () => {
+        if (mq.removeEventListener) mq.removeEventListener('change', handler);
+        else if (mq.removeListener) mq.removeListener(handler);
+      };
+    }
+    return undefined;
+  }, []);
+
+  useEffect(() => {
+    if (prefersReducedMotion) return; // do not animate when user prefers reduced motion
+    if (isPaused) return;
+    const interval = setInterval(advanceTitle, 3000);
+    return () => clearInterval(interval);
+  }, [advanceTitle, isPaused, prefersReducedMotion]);
 
   return (
-    <section className="py-16 bg-[#0b1220] text-white">
+    <section className="hero py-34 bg-[#0b1220] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-12 items-center gap-8">
+        <div className="grid grid-cols-12 items-center gap-8">
           {/* Left: text */}
-          <div className="md:col-span-7">
+          <div className="col-span-7">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
               <span className="block text-cyan-300/90 text-lg sm:text-xl">I'm</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 hero-name">{name}</span>
+              <span className="inline text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 hero-name whitespace-normal break-words">
+                {name}
+              </span>
             </h1>
 
-            <p className="text-lg text-gray-300 mb-6">{title}</p>
+            <p className="text-lg text-gray-300 mb-6">
+              <span className="sr-only">Current role:</span>
+              <span
+                className="rotating-wrapper"
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+                onFocus={() => setIsPaused(true)}
+                onBlur={() => setIsPaused(false)}
+                tabIndex={0}
+              >
+                <span aria-live="polite" className="rotating-title" key={title}>{title}</span>
+              </span>
+            </p>
 
-            {/* Animated words card (Tailwind layout + CSS animation) */}
-            <div className="mb-6">
-              <div className="hero-card">
-                <div className="hero-loader">
-                  <span className="text-gray-400 mr-2 hidden sm:inline">loading</span>
-                  <div className="hero-words">
-                    <span className="hero-word">buttons</span>
-                    <span className="hero-word">forms</span>
-                    <span className="hero-word">switches</span>
-                    <span className="hero-word">cards</span>
-                    <span className="hero-word">widgets</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+            <div className="flex flex-row items-center gap-4">
               <a
                 href="/about"
                 className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-semibold shadow-lg transform transition"
@@ -76,12 +124,12 @@ const Hero = () => {
           </div>
 
           {/* Right: profile card */}
-          <div className="md:col-span-5 flex justify-center md:justify-end">
-            <div className="relative">
-              <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-yellow-400 via-pink-400 to-purple-600 blur-lg opacity-30" aria-hidden="true"></div>
+          <div className="col-span-5 flex justify-end">
+            <div className="relative profile-card">
+              <div className="absolute profile-glow" aria-hidden="true"></div>
 
-              <div className="relative rounded-full overflow-hidden w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 bg-[#071023] ring-1 ring-white/5 shadow-2xl transform transition-all hover:scale-105">
-                <img src={profileImage} alt={name} className="w-full h-full object-cover rounded-full" />
+              <div className="profile-frame">
+                <img src={profileImage} alt={name} className="profile-image" />
               </div>
             </div>
           </div>

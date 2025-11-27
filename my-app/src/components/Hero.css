@@ -22,25 +22,19 @@
   gap: 8px;
   border-radius: 8px;
 }
-.hero-words{
-  overflow: hidden;
+.hero-name {
+  display: inline;
+  /* keep the name static (no entry animation) so it never flickers or gets clipped */
+  animation: none !important;
+  will-change: auto;
+  /* Ensure the full name is always visible and not clipped by overlays */
   position: relative;
-  height: 40px;
-}
-.hero-words::after{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(var(--bg-color) 10%, transparent 30%, transparent 70%, var(--bg-color) 90%);
-  z-index: 20;
-  pointer-events: none;
-}
-.hero-word{
-  display: block;
-  height: 100%;
-  padding-left: 6px;
-  color: #956afa;
-  animation: hero-spin 4s infinite;
+  z-index: 50;
+  white-space: normal; /* allow wrap if needed */
+  overflow: visible;
+  text-overflow: clip;
+  word-break: normal;
+  line-height: 1.05;
 }
 
 @keyframes hero-spin{
@@ -60,25 +54,61 @@
   .hero-word{ animation: none; }
 }
 
-/* Animated name */
-.hero-name {
+/* Inline (small) animated words used next to the name */
+.hero-words.hero-inline{
+  overflow: hidden;
+  position: relative;
+  height: 1.2em;
   display: inline-block;
-  animation: name-pop 900ms cubic-bezier(.2,.9,.2,1) both;
-  will-change: transform, opacity;
+  vertical-align: middle;
+}
+.hero-words.hero-inline::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(var(--hero-bg) 10%, transparent 30%, transparent 70%, var(--hero-bg) 90%);
+  z-index: 20;
+  pointer-events: none;
+}
+.hero-words.hero-inline .hero-word{
+  display: block;
+  height: 1.2em;
+  padding-left: 6px;
+  color: #b29bff;
+  font-size: 0.5em;
+  line-height: 1.2em;
+  animation: hero-spin 4s infinite;
 }
 
-@keyframes name-pop {
-  0% { transform: translateY(10px) scale(.98); opacity: 0; filter: blur(2px); }
-  60% { transform: translateY(-3px) scale(1.02); opacity: 1; filter: blur(0); }
-  100% { transform: translateY(0) scale(1); opacity: 1; filter: blur(0); }
+.rotating-title {
+  display: inline-block;
+  color: #cbd5e1; /* text-gray-300 fallback */
+  animation: title-pop 480ms cubic-bezier(.2,.9,.2,1) both;
+}
+
+.rotating-wrapper { display: inline-block; }
+
+@keyframes title-pop {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .hero-words.hero-inline .hero-word{ animation: none; }
+}
+
+/* Reduce font-size slightly on small screens so the name fits comfortably */
+@media (max-width: 640px) {
+  .hero-name {
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+    line-height: 1.05;
+  }
 }
 .hero {
-  /* Hero section */
-  padding: 4rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+ 
+  
+  
+  
 }
 
 .hero .hero-inner {
@@ -102,4 +132,50 @@
 .hero-cta { display: inline-block; }
 
 .hero .hero-visual { margin-top: 1.5rem; }
+
+/* Profile card fallbacks when Tailwind utilities aren't processed */
+.profile-card { position: relative; }
+.profile-glow { position: absolute; inset: -6px; border-radius: 9999px; background: linear-gradient(to bottom right, #facc15, #ec4899, #7c3aed); filter: blur(12px); opacity: 0.28; }
+.profile-frame { position: relative; border-radius: 9999px; overflow: hidden; width: 14rem; height: 14rem; background: #071023; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: transform .2s ease; }
+.profile-frame:hover { transform: scale(1.03); }
+.profile-image { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 9999px; }
+
+/* Make profile frame scale responsively while keeping the same circular style */
+.profile-frame {
+  width: clamp(8rem, 20vw, 14rem);
+  height: clamp(8rem, 20vw, 14rem);
+}
+
+@media (max-width: 1024px) {
+  .profile-frame { width: clamp(7.5rem, 16vw, 12.5rem); height: clamp(7.5rem, 16vw, 12.5rem); }
+}
+
+@media (max-width: 768px) {
+  .profile-frame { width: clamp(6.5rem, 22vw, 10rem); height: clamp(6.5rem, 22vw, 10rem); }
+}
+
+/* Responsive typography and controls */
+.hero .hero-inner { max-width: 100%; padding: 0 1rem; }
+.hero .hero-title { font-size: clamp(2rem, 6vw, 3.5rem); }
+.hero-name { font-size: clamp(1.6rem, 5.5vw, 3.75rem); }
+.rotating-title { font-size: clamp(0.95rem, 2.2vw, 1.25rem); }
+
+/* Keep buttons inline on all sizes to maintain same layout; allow them to shrink instead of stacking */
+.hero .flex { gap: 0.5rem; display: flex; flex-wrap: nowrap; align-items: center; }
+.hero .flex .inline-flex { white-space: nowrap; min-width: 0; }
+/* Slightly reduce button padding on very small screens to avoid overflow */
+@media (max-width: 420px) {
+  .hero .flex .inline-flex { padding-left: 0.6rem; padding-right: 0.6rem; }
+}
+
+/* Keep profile card aligned to the right as in desktop layout; only slightly adjust glow on smaller screens */
+@media (max-width: 768px) {
+  .profile-glow { inset: -6px; filter: blur(10px); opacity: 0.24; }
+}
+
+/* Respect reduced motion for animations */
+@media (prefers-reduced-motion: reduce){
+  .profile-frame { transition: none; }
+  .hero .flex, .hero .hero-inner { transition: none; }
+}
 
