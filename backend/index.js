@@ -207,6 +207,9 @@ app.use('/uploads', express.static(uploadsDir));
 app.get('/admin', (req, res) => res.sendFile(path.join(__dirname, 'admin.html')));
 app.get('/', (req, res) => res.send('Backend running'));
 
+// simple health endpoint Render can poll
+app.get('/health', (req, res) => res.status(200).send('ok'));
+
 // start
 ensureDirs().then(async () => {
   await initMongoose();
@@ -223,7 +226,15 @@ ensureDirs().then(async () => {
   } catch (e) {
     console.error('DB seed error', e.message);
   }
-  app.listen(port, () => console.log(`Backend listening on port ${port}`));
+  const server = app.listen(port, '0.0.0.0', () => {
+    console.log(`Backend listening on port ${port}`);
+    try {
+      const addr = server.address && server.address();
+      console.log('Server address:', addr);
+    } catch (e) {
+      console.log('Server address not available');
+    }
+  });
 }).catch(e => {
   console.error(e);
 });
