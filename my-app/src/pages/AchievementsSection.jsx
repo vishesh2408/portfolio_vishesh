@@ -19,8 +19,8 @@ const achievementsData = [
         description: "Led a team in a 24-hour hackathon, developing a resume maker website.",
         skills: ["Teamwork", "Web Development", "React", "Node-Js", "MongoDB"]
 
-     }
-   
+    }
+
 ];
 
 // Animation variants
@@ -71,11 +71,12 @@ const AchievementsSection = () => {
                         >
                             <div
                                 style={{
-                                    backgroundColor: '#1e293b',
-                                    border: '1px solid #334155',
+                                    backgroundColor: 'rgba(30, 41, 59, 0.6)',
+                                    backdropFilter: 'blur(12px)',
+                                    border: '1px solid rgba(255, 255, 255, 0.08)',
                                     borderRadius: '0.5rem',
                                     boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-                                    transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+                                    transition: 'all 0.3s ease',
                                     cursor: 'pointer',
                                 }}
                                 className="card-container"

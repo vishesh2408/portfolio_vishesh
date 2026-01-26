@@ -6,13 +6,15 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.8rem 1.25rem;
-    background-color: rgba(17,24,39,0.66);
+    background-color: rgba(17, 24, 39, 0.4); /* More transparent */
     color: white;
     position: sticky;
     top: 0;
     z-index: 1000;
-    backdrop-filter: blur(6px);
-    box-shadow: 0 4px 18px rgba(2,6,23,0.6);
+    backdrop-filter: blur(12px); /* Stronger blur */
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Softer shadow */
   }
   
   /* .logo {

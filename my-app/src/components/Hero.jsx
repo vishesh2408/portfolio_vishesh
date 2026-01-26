@@ -46,7 +46,7 @@ const Hero = () => {
   const advanceTitle = useCallback(() => {
     setTitleIndex((i) => (i + 1) % titles.length);
   }, [titles.length]);
-  const resumeUrl = profile?.resume || 'https://drive.google.com/file/d/1e7luQyTfALtp2tLAbBOhtB76st2GXAhU/view?usp=sharing';
+  const resumeUrl = profile?.resume || 'https://drive.google.com/file/d/1iYvvk0Z9pK1JXqnYmLmtNqcRcVez94p8/view?usp=sharing';
   // If backend provides a path like "/uploads/..." and a backend URL is set, prefix it
   const base = import.meta.env.VITE_BACKEND_URL ?? '';
   const profileImage = profile?.profileImage

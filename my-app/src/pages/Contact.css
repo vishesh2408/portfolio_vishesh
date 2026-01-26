@@ -32,13 +32,14 @@
   .contact-form input,
   .contact-form textarea {
     padding: 1rem;
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    background-color: #1f2937;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(4px);
     color: white;
     font-size: 1rem;
     outline: none;
-    transition: border 0.3s ease;
+    transition: all 0.3s ease;
   }
   
   .contact-form input:focus,

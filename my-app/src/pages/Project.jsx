@@ -52,6 +52,29 @@ const projects = [
             </svg>
         ),
     },
+    {
+        title: 'Educational Puzzle App',
+        description: 'Conceived Eduzzle, an interactive learning app with 10+ subject-based puzzles in Math, Science, and Programming. Crafted a responsive React Native interface, achieved load times under 2 seconds on web and mobile. Stimulated engagement through leaderboards, badges, and rewards.',
+        imageUrl: 'https://images.pexels.com/photos/164531/pexels-photo-164531.jpeg?auto=compress&cs=tinysrgb&w=800', // Puzzle pieces image
+        technologies: ['React-Native', 'Next.js', 'JavaScript', 'NodeJS', 'MongoDB'],
+        link: '#',
+        logo: (
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="lucide lucide-puzzle"
+                style={{ color: '#facc15' }}
+            >
+                <path d="M19.439 7.854l-4.29-4.29a2.614 2.614 0 0 0-3.698 0l-4.29 4.29a2.614 2.614 0 0 1-3.698 0l-1.31-1.31a2.614 2.614 0 0 0-3.698 0l-1.31 1.31a2.614 2.614 0 0 0 0 3.698l4.29 4.29a2.614 2.614 0 0 0 3.698 0l4.29-4.29a2.614 2.614 0 0 1 3.698 0l1.31 1.31a2.614 2.614 0 0 0 3.698 0l1.31-1.31a2.614 2.614 0 0 0 0-3.698zM4.53 10.53a1.697 1.697 0 0 1 0-2.4l1.31-1.31a1.697 1.697 0 0 1 2.4 0l4.29 4.29a1.697 1.697 0 0 0 2.4 0l4.29-4.29a1.697 1.697 0 0 1 2.4 0l1.31 1.31a1.697 1.697 0 0 1 0 2.4l-4.29 4.29a1.697 1.697 0 0 0-2.4 0l-4.29-4.29a1.697 1.697 0 0 1-2.4 0L8.24 10.53a1.697 1.697 0 0 1 0 2.4l-3.71-3.71z"></path>
+                <path d="M10 14h4"></path>
+            </svg>
+        ),
+    },
 ];
 
 const containerVariants = {
@@ -97,12 +120,13 @@ const MyWorkSection = () => {
                             whileHover={{ scaleX: 1.04, scaleY: 1.02 }}
                             transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                             style={{
-                                backgroundColor: '#1f2937',
-                                border: '1px solid rgba(255, 255, 255, 0.1)',
+                                backgroundColor: 'rgba(31, 41, 55, 0.6)',
+                                backdropFilter: 'blur(12px)',
+                                border: '1px solid rgba(255, 255, 255, 0.08)',
                                 borderRadius: '10px',
                                 overflow: 'hidden',
-                                boxShadow: '0 6px 15px rgba(59, 130, 246, 0.2)',
-                                transition: 'box-shadow 0.3s ease',
+                                boxShadow: '0 6px 15px rgba(59, 130, 246, 0.1)',
+                                transition: 'all 0.3s ease',
                             }}
                         >
                             <div

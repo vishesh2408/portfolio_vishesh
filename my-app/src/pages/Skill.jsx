@@ -44,14 +44,15 @@ const Skill = () => {
                         paddingBottom: '10px'
                     }}>Programming Languages</h3>
                     <div style={{
-                        backgroundColor: '#1e293b',
-                        border: '1px solid #334155',
+                        backgroundColor: 'rgba(30, 41, 59, 0.6)',
+                        backdropFilter: 'blur(12px)',
+                        border: '1px solid rgba(255, 255, 255, 0.08)',
                         borderRadius: '0.5rem',
                         padding: '20px',
                         margin: '10px 0',
                         boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                         position: 'relative',
-                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+                        transition: 'all 0.3s ease',
                         cursor: 'pointer'
                     }}>
                         <span style={{ width: '24px', height: '24px', marginRight: '10px', color: '#b9b9b9' }}><Code style={{ width: '24px', height: '24px', color: '#b9b9b9' }} /></span>
@@ -83,14 +84,15 @@ const Skill = () => {
                         </div>
                     </div>
                     <div style={{
-                        backgroundColor: '#1e293b',
-                        border: '1px solid #334155',
+                        backgroundColor: 'rgba(30, 41, 59, 0.6)',
+                        backdropFilter: 'blur(12px)',
+                        border: '1px solid rgba(255, 255, 255, 0.08)',
                         borderRadius: '0.5rem',
                         padding: '20px',
                         margin: '10px 0',
                         boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                         position: 'relative',
-                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+                        transition: 'all 0.3s ease',
                         cursor: 'pointer'
                     }}>
                         <span style={{ width: '24px', height: '24px', marginRight: '10px', color: '#b9b9b9' }}><Code2 style={{ width: '24px', height: '24px', color: '#b9b9b9' }} /></span>
@@ -110,7 +112,7 @@ const Skill = () => {
                                 borderRadius: '10px',
                                 position: 'relative'
                             }}>
-                                 <span style={{
+                                <span style={{
                                     position: 'absolute',
                                     right: '5px',
                                     top: '0px',  // Adjusted top to vertically center the text
@@ -122,14 +124,15 @@ const Skill = () => {
                         </div>
                     </div>
                     <div style={{
-                        backgroundColor: '#1e293b',
-                        border: '1px solid #334155',
+                        backgroundColor: 'rgba(30, 41, 59, 0.6)',
+                        backdropFilter: 'blur(12px)',
+                        border: '1px solid rgba(255, 255, 255, 0.08)',
                         borderRadius: '0.5rem',
                         padding: '20px',
                         margin: '10px 0',
                         boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                         position: 'relative',
-                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+                        transition: 'all 0.3s ease',
                         cursor: 'pointer'
                     }}>
                         <span style={{ width: '24px', height: '24px', marginRight: '10px', color: '#b9b9b9' }}><Code style={{ width: '24px', height: '24px', color: '#b9b9b9' }} /></span>
@@ -152,7 +155,7 @@ const Skill = () => {
                                 <span style={{
                                     position: 'absolute',
                                     right: '5px',
-                                     top: '0px',  // Adjusted top to vertically center the text
+                                    top: '0px',  // Adjusted top to vertically center the text
                                     color: 'white',
                                     fontSize: '12px',
                                     fontWeight: 'bold'
@@ -174,14 +177,15 @@ const Skill = () => {
                         paddingBottom: '10px'
                     }}>Frontend Development</h3>
                     <div style={{
-                        backgroundColor: '#1e293b',
-                        border: '1px solid #334155',
+                        backgroundColor: 'rgba(30, 41, 59, 0.6)',
+                        backdropFilter: 'blur(12px)',
+                        border: '1px solid rgba(255, 255, 255, 0.08)',
                         borderRadius: '0.5rem',
                         padding: '20px',
                         margin: '10px 0',
                         boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                         position: 'relative',
-                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+                        transition: 'all 0.3s ease',
                         cursor: 'pointer'
                     }}>
                         <span style={{ width: '24px', height: '24px', marginRight: '10px', color: '#b9b9b9' }}><Code style={{ width: '24px', height: '24px', color: '#b9b9b9' }} /></span>
@@ -204,7 +208,7 @@ const Skill = () => {
                                 <span style={{
                                     position: 'absolute',
                                     right: '5px',
-                                     top: '0px',  // Adjusted top to vertically center the text
+                                    top: '0px',  // Adjusted top to vertically center the text
                                     color: 'white',
                                     fontSize: '12px',
                                     fontWeight: 'bold'
@@ -213,14 +217,15 @@ const Skill = () => {
                         </div>
                     </div>
                     <div style={{
-                        backgroundColor: '#1e293b',
-                        border: '1px solid #334155',
+                        backgroundColor: 'rgba(30, 41, 59, 0.6)',
+                        backdropFilter: 'blur(12px)',
+                        border: '1px solid rgba(255, 255, 255, 0.08)',
                         borderRadius: '0.5rem',
                         padding: '20px',
                         margin: '10px 0',
                         boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                         position: 'relative',
-                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+                        transition: 'all 0.3s ease',
                         cursor: 'pointer'
                     }}>
                         <span style={{ width: '24px', height: '24px', marginRight: '10px', color: '#b9b9b9' }}><Code style={{ width: '24px', height: '24px', color: '#b9b9b9' }} /></span>
@@ -243,7 +248,7 @@ const Skill = () => {
                                 <span style={{
                                     position: 'absolute',
                                     right: '5px',
-                                     top: '0px',  // Adjusted top to vertically center the text
+                                    top: '0px',  // Adjusted top to vertically center the text
                                     color: 'white',
                                     fontSize: '12px',
                                     fontWeight: 'bold'
@@ -252,14 +257,15 @@ const Skill = () => {
                         </div>
                     </div>
                     <div style={{
-                        backgroundColor: '#1e293b',
-                        border: '1px solid #334155',
+                        backgroundColor: 'rgba(30, 41, 59, 0.6)',
+                        backdropFilter: 'blur(12px)',
+                        border: '1px solid rgba(255, 255, 255, 0.08)',
                         borderRadius: '0.5rem',
                         padding: '20px',
                         margin: '10px 0',
                         boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                         position: 'relative',
-                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+                        transition: 'all 0.3s ease',
                         cursor: 'pointer'
                     }}>
                         <span style={{ width: '24px', height: '24px', marginRight: '10px', color: '#b9b9b9' }}><Code style={{ width: '24px', height: '24px', color: '#b9b9b9' }} /></span>
@@ -282,7 +288,7 @@ const Skill = () => {
                                 <span style={{
                                     position: 'absolute',
                                     right: '5px',
-                                     top: '0px',  // Adjusted top to vertically center the text
+                                    top: '0px',  // Adjusted top to vertically center the text
                                     color: 'white',
                                     fontSize: '12px',
                                     fontWeight: 'bold'
@@ -291,14 +297,15 @@ const Skill = () => {
                         </div>
                     </div>
                     <div style={{
-                        backgroundColor: '#1e293b',
-                        border: '1px solid #334155',
+                        backgroundColor: 'rgba(30, 41, 59, 0.6)',
+                        backdropFilter: 'blur(12px)',
+                        border: '1px solid rgba(255, 255, 255, 0.08)',
                         borderRadius: '0.5rem',
                         padding: '20px',
                         margin: '10px 0',
                         boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                         position: 'relative',
-                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+                        transition: 'all 0.3s ease',
                         cursor: 'pointer'
                     }}>
                         <span style={{ width: '24px', height: '24px', marginRight: '10px', color: '#b9b9b9' }}><Code style={{ width: '24px', height: '24px', color: '#b9b9b9' }} /></span>
@@ -343,14 +350,15 @@ const Skill = () => {
                         paddingBottom: '10px'
                     }}>Backend Development</h3>
                     <div style={{
-                        backgroundColor: '#1e293b',
-                        border: '1px solid #334155',
+                        backgroundColor: 'rgba(30, 41, 59, 0.6)',
+                        backdropFilter: 'blur(12px)',
+                        border: '1px solid rgba(255, 255, 255, 0.08)',
                         borderRadius: '0.5rem',
                         padding: '20px',
                         margin: '10px 0',
                         boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                         position: 'relative',
-                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+                        transition: 'all 0.3s ease',
                         cursor: 'pointer'
                     }}>
                         <span style={{ width: '24px', height: '24px', marginRight: '10px', color: '#b9b9b9' }}><Code style={{ width: '24px', height: '24px', color: '#b9b9b9' }} /></span>
@@ -373,7 +381,7 @@ const Skill = () => {
                                 <span style={{
                                     position: 'absolute',
                                     right: '5px',
-                                     top: '0px',  // Adjusted top to vertically center the text
+                                    top: '0px',  // Adjusted top to vertically center the text
                                     color: 'white',
                                     fontSize: '12px',
                                     fontWeight: 'bold'
@@ -382,14 +390,15 @@ const Skill = () => {
                         </div>
                     </div>
                     <div style={{
-                        backgroundColor: '#1e293b',
-                        border: '1px solid #334155',
+                        backgroundColor: 'rgba(30, 41, 59, 0.6)',
+                        backdropFilter: 'blur(12px)',
+                        border: '1px solid rgba(255, 255, 255, 0.08)',
                         borderRadius: '0.5rem',
                         padding: '20px',
                         margin: '10px 0',
                         boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                         position: 'relative',
-                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+                        transition: 'all 0.3s ease',
                         cursor: 'pointer'
                     }}>
                         <span style={{ width: '24px', height: '24px', marginRight: '10px', color: '#b9b9b9' }}><Code style={{ width: '24px', height: '24px', color: '#b9b9b9' }} /></span>
@@ -412,7 +421,7 @@ const Skill = () => {
                                 <span style={{
                                     position: 'absolute',
                                     right: '5px',
-                                     top: '0px',  // Adjusted top to vertically center the text
+                                    top: '0px',  // Adjusted top to vertically center the text
                                     color: 'white',
                                     fontSize: '12px',
                                     fontWeight: 'bold'
@@ -434,14 +443,15 @@ const Skill = () => {
                         paddingBottom: '10px'
                     }}>Databases</h3>
                     <div style={{
-                        backgroundColor: '#1e293b',
-                        border: '1px solid #334155',
+                        backgroundColor: 'rgba(30, 41, 59, 0.6)',
+                        backdropFilter: 'blur(12px)',
+                        border: '1px solid rgba(255, 255, 255, 0.08)',
                         borderRadius: '0.5rem',
                         padding: '20px',
                         margin: '10px 0',
                         boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                         position: 'relative',
-                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+                        transition: 'all 0.3s ease',
                         cursor: 'pointer'
                     }}>
                         <span style={{ width: '24px', height: '24px', marginRight: '10px', color: '#b9b9b9' }}><Database style={{ width: '24px', height: '24px', color: '#b9b9b9' }} /></span>
@@ -464,7 +474,7 @@ const Skill = () => {
                                 <span style={{
                                     position: 'absolute',
                                     right: '5px',
-                                     top: '0px',  // Adjusted top to vertically center the text
+                                    top: '0px',  // Adjusted top to vertically center the text
                                     color: 'white',
                                     fontSize: '12px',
                                     fontWeight: 'bold'
@@ -473,14 +483,15 @@ const Skill = () => {
                         </div>
                     </div>
                     <div style={{
-                        backgroundColor: '#1e293b',
-                        border: '1px solid #334155',
+                        backgroundColor: 'rgba(30, 41, 59, 0.6)',
+                        backdropFilter: 'blur(12px)',
+                        border: '1px solid rgba(255, 255, 255, 0.08)',
                         borderRadius: '0.5rem',
                         padding: '20px',
                         margin: '10px 0',
                         boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                         position: 'relative',
-                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+                        transition: 'all 0.3s ease',
                         cursor: 'pointer'
                     }}>
                         <span style={{ width: '24px', height: '24px', marginRight: '10px', color: '#b9b9b9' }}><Database style={{ width: '24px', height: '24px', color: '#b9b9b9' }} /></span>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
@@ -8,19 +9,37 @@ const Header = () => {
     <header className="header">
       <div className="container flex items-center justify-between">
         <div className="logo flex items-center gap-3">
-          <div className="text-2xl font-bold text-teal-600">Vishesh</div>
+          <Link to="/" className="text-2xl font-bold text-teal-600 hover:text-teal-500 transition">Vishesh</Link>
         </div>
 
         {/* Desktop nav */}
         <nav className="desktop-nav nav">
-          <a className="px-3 py-1 rounded-md hover:bg-white/5 transition" href="/">Home</a>
-          <a className="px-3 py-1 rounded-md hover:bg-white/5 transition" href="/about">About</a>
-          <a className="px-3 py-1 rounded-md hover:bg-white/5 transition" href="/skills">Skills</a>
-          <a className="px-3 py-1 rounded-md hover:bg-white/5 transition" href="/achievements">Achievements</a>
-          <a className="px-3 py-1 rounded-md hover:bg-white/5 transition" href="/certifications">Certifications</a>
-          <a className="px-3 py-1 rounded-md hover:bg-white/5 transition" href="/projects">Projects</a>
-          <a className="px-3 py-1 rounded-md hover:bg-white/5 transition" href="/resume">Resume</a>
-          <a className="px-3 py-1 rounded-md bg-gradient-to-r from-purple-600 to-blue-500 text-white" href="/contact">Contact</a>
+          {[
+            { name: 'Home', path: '/' },
+            { name: 'About', path: '/about' },
+            { name: 'Skills', path: '/skills' },
+            { name: 'Achievements', path: '/achievements' },
+            { name: 'Certifications', path: '/certifications' },
+            { name: 'Projects', path: '/projects' },
+            { name: 'Resume', path: '/resume' },
+          ].map((link) => (
+            <NavLink
+              key={link.name}
+              to={link.path}
+              className={({ isActive }) =>
+                `px-3 py-1 rounded-md transition ${isActive ? 'bg-white/10 text-teal-400' : 'hover:bg-white/5 text-gray-300'
+                }`
+              }
+            >
+              {link.name}
+            </NavLink>
+          ))}
+          <Link
+            to="/contact"
+            className="px-3 py-1 rounded-md bg-gradient-to-r from-purple-600 to-blue-500 text-white hover:opacity-90 transition"
+          >
+            Contact
+          </Link>
         </nav>
 
         {/* Mobile hamburger */}
@@ -46,15 +65,35 @@ const Header = () => {
       {/* Mobile menu panel - render only when open to avoid duplicate menus on desktop */}
       {open && (
         <div className="mobile-panel px-4 pb-4">
-          <nav className="stack">
-            <a className="block py-2 px-3 rounded-md hover:bg-white/5" href="/">Home</a>
-            <a className="block py-2 px-3 rounded-md hover:bg-white/5" href="/about">About</a>
-            <a className="block py-2 px-3 rounded-md hover:bg-white/5" href="/skills">Skills</a>
-            <a className="block py-2 px-3 rounded-md hover:bg-white/5" href="/achievements">Achievements</a>
-            <a className="block py-2 px-3 rounded-md hover:bg-white/5" href="/certifications">Certifications</a>
-            <a className="block py-2 px-3 rounded-md hover:bg-white/5" href="/projects">Projects</a>
-            <a className="block py-2 px-3 rounded-md hover:bg-white/5" href="/resume">Resume</a>
-            <a className="block py-2 px-3 rounded-md bg-gradient-to-r from-purple-600 to-blue-500 text-white text-center" href="/contact">Contact</a>
+          <nav className="flex flex-col space-y-2 mt-2">
+            {[
+              { name: 'Home', path: '/' },
+              { name: 'About', path: '/about' },
+              { name: 'Skills', path: '/skills' },
+              { name: 'Achievements', path: '/achievements' },
+              { name: 'Certifications', path: '/certifications' },
+              { name: 'Projects', path: '/projects' },
+              { name: 'Resume', path: '/resume' },
+            ].map((link) => (
+              <NavLink
+                key={link.name}
+                to={link.path}
+                onClick={() => setOpen(false)}
+                className={({ isActive }) =>
+                  `block py-2 px-3 rounded-md transition ${isActive ? 'bg-white/10 text-teal-400' : 'hover:bg-white/5 text-gray-300'
+                  }`
+                }
+              >
+                {link.name}
+              </NavLink>
+            ))}
+            <Link
+              to="/contact"
+              onClick={() => setOpen(false)}
+              className="block py-2 px-3 rounded-md bg-gradient-to-r from-purple-600 to-blue-500 text-white text-center hover:opacity-90 transition"
+            >
+              Contact
+            </Link>
           </nav>
         </div>
       )}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { GraduationCap } from 'lucide-react';
-import placeholderImg from '../assets/profile.png';
+import visheshFormal from '../assets/vishesh_formal.png';
 
 // CSS is defined as a string here.
 const styles = `
@@ -47,13 +47,15 @@ const styles = `
 }
 
 .cert-card {
-  background-color: #1e293b;
-  border: 1px solid #334155;
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 0.5rem;
   padding: 1rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   position: relative;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .cert-card:hover {
@@ -128,28 +130,28 @@ const CertificationsSection = () => {
       title: 'Server-side JavaScript with Node.js',
       by: 'Coursera',
       details: 'Learn to build server-side applications with Node.js.',
-      image: placeholderImg,
+      image: visheshFormal,
       certificateUrl: 'https://coursera.org/verify/8WCW6WUCAHH3 ',
     },
     {
       title: 'Building Web Applications in PHP',
       by: 'Unknown', // You might want to add this if you know
       details: 'Learn to build web applications with PHP.',
-      image: placeholderImg,
+      image: visheshFormal,
       certificateUrl: 'https://coursera.org/verify/9YWMTYYRNFIJ',
     },
     {
       title: 'Data Structure Algorithms - Self Paced',
       by: 'Unknown',  // You might want to add this if you know
       details: 'Self-paced course on Data Structures and Algorithms.',
-      image: placeholderImg,
+      image: visheshFormal,
       certificateUrl: 'https://www.geeksforgeeks.org/certificate/6495655875bce823f50d843d22093dd2?utm_source=socials&utm_medium=cc_link',
     },
-     {
+    {
       title: 'Ethical Hacking',
       by: 'NPTL',
       details: 'Course on Ethical Hacking.',
-      image: placeholderImg,
+      image: visheshFormal,
       certificateUrl: 'https://drive.google.com/file/d/1p8_7Wqm-h85e53ph0utjmrVy6L1zASBc/view?usp=sharing',
     },
   ];
@@ -191,17 +193,17 @@ const CertificationsSection = () => {
           </div>
         </div>
         <div className="cert-details">
-            {certification.details}
-            {certification.certificateUrl && (
-              <p className="certificate-link">
-                <a href={certification.certificateUrl} target="_blank" rel="noopener noreferrer">
-                  View Certificate
-                </a>
-              </p>
-            )}
-            {!certification.certificateUrl && (
-              <p>Certificate not available.</p>
-            )}
+          {certification.details}
+          {certification.certificateUrl && (
+            <p className="certificate-link">
+              <a href={certification.certificateUrl} target="_blank" rel="noopener noreferrer">
+                View Certificate
+              </a>
+            </p>
+          )}
+          {!certification.certificateUrl && (
+            <p>Certificate not available.</p>
+          )}
         </div>
         <div className="cert-glow" />
       </motion.div>
