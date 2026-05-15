@@ -1,42 +1,72 @@
 .home {
     width: 100%;
-  }
-  
-  .intro-section {
-    padding: 4rem 2rem;
-    background-color: #111827;
+}
+
+.intro-section {
+    padding: 6rem 2rem;
+    background: linear-gradient(to bottom, #0b1220, #111827);
     text-align: center;
-  }
-  
-  .intro-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.intro-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(147, 51, 234, 0.15) 0%, rgba(0,0,0,0) 70%);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.intro-container {
     max-width: 800px;
     margin: auto;
-  }
-  
-  .intro-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #cdd4e2;
-  }
-  
-  /* .intro-section p {
-    font-size: 1.1rem;
-    color: #818892;
-    margin-bottom: 2rem;
-    line-height: 1.6;
-  } */
-  
-  .home-cta {
-    padding: 0.75rem 2rem;
-    background-color:  #7b3e8d;
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 4rem 2rem;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.intro-container:hover {
+    transform: translateY(-5px);
+}
+
+.intro-section h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: linear-gradient(to right, #ffffff, #a5b4fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.home-cta {
+    display: inline-block;
+    padding: 0.85rem 2.5rem;
+    background: linear-gradient(to right, #9333ea, #3b82f6);
     color: white;
-    border-radius: 8px;
+    border-radius: 9999px;
     font-weight: 600;
+    font-size: 1.1rem;
     text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .home-cta:hover {
-    background-color: #8e2de2;
-  }
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px -5px rgba(147, 51, 234, 0.4);
+}
+
+.home-cta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 25px -5px rgba(147, 51, 234, 0.6);
+}
   

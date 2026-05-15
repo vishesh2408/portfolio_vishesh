@@ -13,10 +13,12 @@ import CertificationsSection from './pages/CertificationsSection';
 import Achievement from './pages/AchievementsSection';
 import About from './pages/About';
 import ExperienceSection from './pages/ExperienceSection';
+import CursorGlow from './components/CursorGlow';
 
 const App = () => {
   return (
     <>
+      <CursorGlow />
       <Header />
       <main>
         <Routes>

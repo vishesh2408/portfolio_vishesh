@@ -1,124 +1,63 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Trophy } from 'lucide-react';
-
-
+import './AchievementsSection.css';
 
 const achievementsData = [
     {
-        title: "Alogorithm challenge",
-        issuer: "Lpu alumni",
+        title: "Algorithm Challenge",
+        issuer: "LPU Alumni",
         date: "2023",
-        description: "Awarded for contributions to problem-solving and innovative solutions.",
-        skills: ["C++", "Problem Solving"]
+        description: "Awarded for exceptional contributions to problem-solving and developing highly innovative algorithmic solutions.",
+        skills: ["C++", "Problem Solving", "Algorithms"]
     },
     {
-        title: "Web-E-Stan",
-        issuer: "Lpu alumni",
+        title: "Web-E-Stan Hackathon",
+        issuer: "LPU Alumni",
         date: "2025",
-        description: "Led a team in a 24-hour hackathon, developing a resume maker website.",
-        skills: ["Teamwork", "Web Development", "React", "Node-Js", "MongoDB"]
-
+        description: "Led a team in a grueling 24-hour hackathon, successfully architecting and developing a full-stack resume maker web application.",
+        skills: ["Team Leadership", "Web Development", "React", "Node.js", "MongoDB"]
     }
-
 ];
-
-// Animation variants
-const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i) => ({
-        opacity: 1,
-        y: 0,
-        transition: {
-            delay: i * 0.2,
-            duration: 0.5,
-            ease: "easeInOut"
-        }
-    }),
-};
 
 const AchievementsSection = () => {
     return (
-        <section style={{ padding: '48px 0', backgroundColor: '#0f172a' }}>
-            <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', paddingLeft: '16px', paddingRight: '16px' }}>
-                <h2
-                    style={{
-                        fontSize: '2rem',
-                        fontWeight: 'bold',
-                        textAlign: 'center',
-                        marginBottom: '2rem',
-                        color: 'transparent', // Changed to only have transparent color
-                        backgroundImage: 'linear-gradient(to right,  #7b3e8d, #7b3e8d)',
-                        backgroundClip: 'text',
-                        WebkitBackgroundClip: 'text',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: '0.75rem'
-                    }}
-                >
-                    <Trophy style={{ width: '2rem', height: '2rem', color: '#7b3e8d' }} />
+        <section className="achievement-section" id="achievements">
+            <div className="achievement-container">
+                <h2 className="achievement-heading">
+                    <Trophy className="achievement-icon" />
                     Achievements
                 </h2>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr', md: { gridTemplateColumns: '1fr 1fr' }, lg: { gridTemplateColumns: '1fr 1fr 1fr' }, gap: '2rem' }}>
+                
+                <div className="achievement-grid">
                     {achievementsData.map((achievement, index) => (
-                        <motion.div
-                            key={index}
-                            variants={cardVariants}
-                            initial="hidden"
-                            animate="visible"
-                            custom={index}
-                        >
-                            <div
-                                style={{
-                                    backgroundColor: 'rgba(30, 41, 59, 0.6)',
-                                    backdropFilter: 'blur(12px)',
-                                    border: '1px solid rgba(255, 255, 255, 0.08)',
-                                    borderRadius: '0.5rem',
-                                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-                                    transition: 'all 0.3s ease',
-                                    cursor: 'pointer',
-                                }}
-                                className="card-container"
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.borderColor = 'rgba(163, 100, 176, 0.9)'; // Yellow border on hover
-                                    e.currentTarget.classList.add('hovered');
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.borderColor = '#334155';
-                                    e.currentTarget.classList.remove('hovered');
-                                }}
-
-                            >
-                                <div style={{ padding: '1.5rem' }}>
-                                    <h3 style={{ fontSize: '1.25rem', fontWeight: 'semibold', color: 'white', marginBottom: '0.5rem' }}>{achievement.title}</h3>
-                                    <p style={{ fontSize: '0.875rem', color: '#d1d5db', marginBottom: '1rem' }}>{achievement.issuer} - {achievement.date}</p>
-                                    <p style={{ color: '#e5e7eb', marginBottom: '1rem' }}>{achievement.description}</p>
-                                    {achievement.skills && (
-                                        <div>
-                                            <h4 style={{ fontSize: '0.875rem', fontWeight: 'medium', color: '#d1d5db', marginBottom: '0.25rem' }}>Skills:</h4>
-                                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                                                {achievement.skills.map((skill, skillIndex) => (
-                                                    <span
-                                                        key={skillIndex}
-                                                        style={{
-                                                            padding: '0.25rem 0.5rem',
-                                                            borderRadius: '1rem',
-                                                            backgroundColor: '#7b3e8d',
-                                                            color: '#ffffff',
-                                                            border: '1px solid #7b3e8d',
-                                                            fontSize: '0.75rem'
-                                                        }}
-                                                    >
-                                                        {skill}
-                                                    </span>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    )}
+                        <div className="achievement-card" key={index}>
+                            <div className="achievement-glow" />
+                            
+                            <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', height: '100%' }}>
+                                <h3 className="achievement-title">{achievement.title}</h3>
+                                
+                                <div className="achievement-meta">
+                                    <span>{achievement.issuer}</span>
+                                    <span className="achievement-meta-divider" />
+                                    <span>{achievement.date}</span>
                                 </div>
+                                
+                                <p className="achievement-description">{achievement.description}</p>
+                                
+                                {achievement.skills && achievement.skills.length > 0 && (
+                                    <div>
+                                        <h4 className="achievement-skills-heading">Demonstrated Skills</h4>
+                                        <div className="achievement-skills-list">
+                                            {achievement.skills.map((skill, skillIndex) => (
+                                                <span className="achievement-skill-tag" key={skillIndex}>
+                                                    {skill}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>
@@ -127,4 +66,3 @@ const AchievementsSection = () => {
 };
 
 export default AchievementsSection;
-

@@ -5,7 +5,7 @@ import { DownloadCloud } from 'lucide-react';
 import './Resume.css'; // import the CSS file
 
 const Resume = () => {
-    const resumeUrl = 'https://drive.google.com/file/d/1iYvvk0Z9pK1JXqnYmLmtNqcRcVez94p8/view?usp=sharing';
+    const resumeUrl = 'https://drive.google.com/file/d/1Rvv4AcLf01GqCo06Fs26dg4BiVzkV5eC/view?usp=sharing';
 
     const containerVariants = {
         hidden: { opacity: 0 },

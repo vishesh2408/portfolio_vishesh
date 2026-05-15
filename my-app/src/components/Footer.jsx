@@ -24,7 +24,7 @@ const Footer = () => {
           <SiLeetcode size={24} />
         </a>
         <a
-          href="YOUR_INSTAGRAM_LINK" // Replace with your actual Instagram link
+          href="https://www.instagram.com/vishesh2408_/"
           target="_blank"
           rel="noopener noreferrer"
           className="social-icon instagram"
@@ -32,7 +32,7 @@ const Footer = () => {
           <FaInstagram size={24} />
         </a>
         <a
-          href="YOUR_WHATSAPP_LINK" // Replace with your actual WhatsApp link (e.g., https://wa.me/YOUR_PHONE_NUMBER)
+          href="https://wa.me/919616265078"
           target="_blank"
           rel="noopener noreferrer"
           className="social-icon whatsapp"
